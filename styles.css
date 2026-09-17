@@ -320,7 +320,8 @@ input[type="checkbox"], input[type="radio"] { width: 17px; height: 17px; margin:
 .pill { display: inline-flex; align-items: center; gap: 7px; padding: 6px 11px; border: 1px solid #dce3f0; border-radius: 20px; background: #fff; color: #67758c; font-size: .61rem; }
 .pill .status-dot { width: 5px; height: 5px; background: var(--blue); }
 .schedule-heading-note p { margin-top: 13px; font-size: .75rem; color: #7b889e; line-height: 1.8; }
-.schedule-table-wrap { overflow-x: auto; border: 1px solid #dfe5f1; border-radius: 13px; background: #fff; }
+/* Keep absolute screen-reader labels inside the scrolling table, not the viewport. */
+.schedule-table-wrap { position: relative; max-width: 100%; overflow-x: auto; border: 1px solid #dfe5f1; border-radius: 13px; background: #fff; }
 .schedule-table { width: 100%; border-collapse: collapse; text-align: left; white-space: nowrap; }
 .schedule-table thead { background: #fafbfe; }
 .schedule-table th { padding: 16px 23px; border-bottom: 1px solid #e9edf5; font-size: .61rem; font-weight: 600; color: #8a96aa; }
@@ -576,7 +577,7 @@ input[type="checkbox"], input[type="radio"] { width: 17px; height: 17px; margin:
 .compare-modal > .eyebrow, .privacy-modal > .eyebrow { margin-bottom: 13px; font-size: .59rem; }
 .compare-modal h2, .privacy-modal h2 { padding-right: 28px; font-size: 2.03rem; }
 .compare-intro { margin-top: 15px; color: #8492a8; font-size: .8rem; }
-.comparison-table-wrap { margin-top: 25px; overflow-x: auto; border: 1px solid #e0e7f2; border-radius: 10px; }
+.comparison-table-wrap { position: relative; max-width: 100%; margin-top: 25px; overflow-x: auto; border: 1px solid #e0e7f2; border-radius: 10px; }
 .comparison-table { width: 100%; min-width: 590px; border-collapse: collapse; text-align: left; font-size: .68rem; }
 .comparison-table th, .comparison-table td { padding: 14px 16px; border-bottom: 1px solid #e6ebf4; vertical-align: top; line-height: 1.8; }
 .comparison-table thead th { color: var(--theme-ink, #556a88); background: var(--theme-bg, #f6f8fc); font-size: .74rem; }
@@ -763,8 +764,8 @@ input[type="checkbox"], input[type="radio"] { width: 17px; height: 17px; margin:
   .hero .btn { min-height: 46px; padding: 12px 14px; font-size: .68rem; }
   .hero-trust { justify-content: center; margin-top: 19px; column-gap: 13px; font-size: .53rem; }
   .hero-art { flex-shrink: 0; width: 350px; max-width: 100%; height: 317px; transform: none; margin-block: 6px 32px; }
-  .hero-art::before { width: 294px; height: 294px; left: 23px; top: 0; }
-  .hero-art::after { width: 251px; height: 251px; left: 44px; top: 22px; }
+  .hero-art::before { width: min(294px, 90%); height: auto; aspect-ratio: 1; left: 50%; top: 0; transform: translateX(-50%); }
+  .hero-art::after { width: min(251px, 80%); height: auto; aspect-ratio: 1; left: 50%; top: 22px; transform: translateX(-50%); }
   .workspace-card { top: 26px; right: 3px; left: 6px; height: 284px; border-radius: 12px; }
   .workspace-top { height: 29px; padding-inline: 12px; font-size: .43rem; }
   .workspace-body { height: calc(100% - 29px); }
@@ -889,8 +890,8 @@ input[type="checkbox"], input[type="radio"] { width: 17px; height: 17px; margin:
   .payment-strip > div span { font-size: .53rem; }
   .about-section { display: flex; flex-direction: column; gap: 39px; padding-top: 50px; }
   .about-art { width: 330px; max-width: 100%; height: 285px; flex-shrink: 0; }
-  .about-art::before { width: 259px; height: 259px; left: 31px; top: 12px; }
-  .about-orbit { width: 300px; height: 230px; left: 7px; }
+  .about-art::before { width: min(259px, 90%); height: auto; aspect-ratio: 1; left: 50%; top: 12px; transform: translateX(-50%); }
+  .about-orbit { width: 80%; height: auto; aspect-ratio: 30 / 23; left: 10%; }
   .about-note { width: 295px; padding: 25px; }
   .about-note > p { font-size: 1.52rem; }
   .about-note > span { font-size: .44rem; }

@@ -7,7 +7,8 @@
   const colors = { light: '#f7f8fc', dark: '#0c1423', forest: '#101c19', sand: '#faf5ec' };
   const root = document.documentElement;
   const media = window.matchMedia('(prefers-color-scheme: dark)');
-  let preference = 'system';
+  const defaultPreference = 'sand';
+  let preference = defaultPreference;
   let storageAvailable = true;
   try {
     const saved = localStorage.getItem(key);
@@ -85,7 +86,7 @@
   else if (media.addListener) media.addListener(systemChanged);
   window.addEventListener('storage', event => {
     if (event.key !== key && event.key !== null) return;
-    preference = options.includes(event.newValue) ? event.newValue : 'system';
+    preference = options.includes(event.newValue) ? event.newValue : defaultPreference;
     syncControls();
   });
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });

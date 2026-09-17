@@ -59,4 +59,4 @@ No publiques las carpetas research o qa si están presentes: son material auxili
 
 ## Apariencia
 
-El botón Apariencia de la cabecera permite elegir Automático, Claro, Noche, Bosque y Arena. Automático sigue el modo claro u oscuro del dispositivo y responde a sus cambios. La selección se aplica a toda la página y se recuerda mediante almacenamiento local de este navegador. Si el navegador bloquea el almacenamiento, el tema funciona durante la visita y se indica en el selector. No se envía esta preferencia a ningún servidor. Puedes editar las paletas en themes.css.
+Arena es la apariencia predeterminada para las visitas sin una preferencia guardada. El botón Apariencia de la cabecera permite elegir Automático, Claro, Noche, Bosque y Arena. Automático sigue el modo claro u oscuro del dispositivo y responde a sus cambios. La selección se aplica a toda la página y se recuerda mediante almacenamiento local de este navegador. Si el navegador bloquea el almacenamiento, el tema funciona durante la visita y se indica en el selector. No se envía esta preferencia a ningún servidor. Puedes editar las paletas en themes.css.
